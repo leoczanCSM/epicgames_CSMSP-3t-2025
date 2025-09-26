@@ -1,1 +1,1 @@
-# epicgames_CSMSP-3t-2025
+Open the index.html file and go
