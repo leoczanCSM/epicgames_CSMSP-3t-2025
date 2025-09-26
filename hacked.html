@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOCÊ FOI HACKEADO - Epic Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="hacked-body">
+    <div class="hacked-container">
+        <div class="hacked-content">
+            <div class="hacked-icon">💀</div>
+            <h1 class="hacked-title">VOCÊ FOI HACKEADO!</h1>
+            
+            <div class="hacked-message">
+                <p>Você clicou em uma armadilha! Em uma situação real, isso poderia ter comprometido sua conta.</p>
+            </div>
+
+            <div class="hacked-warning">
+                <h2>⚠️ O que aconteceu?</h2>
+                <p>Você caiu em uma das seguintes armadilhas:</p>
+                <ul id="trap-list">
+                    <li>Anúncio pop-up falso prometendo V-Bucks grátis</li>
+                    <li>Captcha suspeito em site não oficial</li>
+                    <li>Oferta "imperdível" com desconto impossível</li>
+                    <li>Notificação falsa de urgência</li>
+                    <li>Download de aplicativo não oficial</li>
+                    <li>Formulário de login em site falso</li>
+                    <li>Pesquisa falsa prometendo prêmios</li>
+                </ul>
+            </div>
+
+            <div class="hacked-education">
+                <h2>🎓 Aprenda com o erro:</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="education-icon">🚫</div>
+                        <h3>Nunca clique em pop-ups</h3>
+                        <p>Anúncios pop-up são frequentemente maliciosos</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">🔍</div>
+                        <h3>Verifique URLs</h3>
+                        <p>Sempre confirme se está no site oficial</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">💰</div>
+                        <h3>Desconfie do "grátis"</h3>
+                        <p>Se parece bom demais, provavelmente é golpe</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">⏰</div>
+                        <h3>Ignore urgência falsa</h3>
+                        <p>Golpistas usam pressão de tempo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hacked-stats">
+                <h2>📊 Estatísticas de Segurança</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">dos usuários caem em phishing</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$4.2B</div>
+                        <div class="stat-label">perdidos em golpes online em 2023</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2FA</div>
+                        <div class="stat-label">reduz 99% dos ataques</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hacked-tips">
+                <h2>🛡️ Dicas para se proteger:</h2>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <span class="tip-icon">✅</span>
+                        <span>Sempre ative o 2FA em suas contas</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">✅</span>
+                        <span>Use senhas únicas e fortes</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">✅</span>
+                        <span>Compre apenas em lojas oficiais</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">✅</span>
+                        <span>Mantenha software atualizado</span>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">✅</span>
+                        <span>Desconfie de ofertas suspeitas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hacked-actions">
+                <button class="btn btn-primary btn-large" onclick="restartSession()">
+                    🔄 REINICIAR SESSÃO
+                </button>
+                <div class="secondary-actions">
+                    <a href="2fa.html" class="btn btn-secondary">Ativar 2FA</a>
+                    <a href="security-test.html" class="btn btn-secondary">Tentar Novamente</a>
+                </div>
+            </div>
+
+            <div class="hacked-footer">
+                <p>Este é um ambiente de teste educativo. Nenhum dado real foi comprometido.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glitch effect overlay -->
+    <div class="glitch-overlay"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Add glitch effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.hacked-title');
+            setInterval(() => {
+                title.classList.add('glitch');
+                setTimeout(() => {
+                    title.classList.remove('glitch');
+                }, 200);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

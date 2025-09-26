@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativar 2FA - Epic Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="logo.png" alt="Epic Games" class="logo">
+                <span class="brand-text">Epic Games</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="2fa.html" class="active">Ativar 2FA</a></li>
+                <li><a href="security-test.html">Teste de Segurança</a></li>
+                <li><a href="store.html">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1>Ativar Autenticação de Dois Fatores</h1>
+                    <p>Adicione uma camada extra de segurança à sua conta Epic Games</p>
+                </div>
+
+                <div class="auth-steps">
+                    <div class="step-indicator">
+                        <div class="step-item active" data-step="1">
+                            <div class="step-circle">1</div>
+                            <span>Verificar Identidade</span>
+                        </div>
+                        <div class="step-item" data-step="2">
+                            <div class="step-circle">2</div>
+                            <span>Configurar App</span>
+                        </div>
+                        <div class="step-item" data-step="3">
+                            <div class="step-circle">3</div>
+                            <span>Confirmar</span>
+                        </div>
+                    </div>
+
+                    <div class="step-content" id="step-1">
+                        <div class="step-card">
+                            <h2>Passo 1: Verificar sua Identidade</h2>
+                            <p>Digite sua senha atual para continuar:</p>
+                            <form class="auth-form">
+                                <div class="form-group">
+                                    <label for="current-password">Senha Atual:</label>
+                                    <input type="password" id="current-password" name="current-password" required>
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continuar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="step-content hidden" id="step-2">
+                        <div class="step-card">
+                            <h2>Passo 2: Configurar Aplicativo Autenticador</h2>
+                            <p>Escaneie este QR Code com seu aplicativo autenticador (Google Authenticator, Authy, etc.):</p>
+                            <div class="qr-container">
+                                <div class="qr-code">
+                                    <div class="qr-placeholder">
+                                        <div class="qr-pattern"></div>
+                                        <p>QR CODE</p>
+                                    </div>
+                                </div>
+                                <div class="backup-code">
+                                    <p><strong>Código manual:</strong></p>
+                                    <code>JBSWY3DPEHPK3PXP</code>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="auth-code">Digite o código de 6 dígitos do seu app:</label>
+                                <input type="text" id="auth-code" name="auth-code" maxlength="6" placeholder="123456">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Verificar Código</button>
+                        </div>
+                    </div>
+
+                    <div class="step-content hidden" id="step-3">
+                        <div class="step-card success">
+                            <div class="success-icon">✅</div>
+                            <h2>2FA Ativado com Sucesso!</h2>
+                            <p>Sua conta agora está protegida com autenticação de dois fatores.</p>
+                            
+                            <div class="backup-codes">
+                                <h3>Códigos de Backup</h3>
+                                <p>Guarde estes códigos em local seguro. Você pode usá-los se perder acesso ao seu telefone:</p>
+                                <div class="codes-grid">
+                                    <code>ABC123-DEF456</code>
+                                    <code>GHI789-JKL012</code>
+                                    <code>MNO345-PQR678</code>
+                                    <code>STU901-VWX234</code>
+                                </div>
+                            </div>
+
+                            <div class="next-steps">
+                                <h3>Próximos Passos</h3>
+                                <ul>
+                                    <li>✅ 2FA ativado</li>
+                                    <li>📱 App configurado</li>
+                                    <li>🔐 Códigos de backup salvos</li>
+                                </ul>
+                            </div>
+
+                            <div class="action-buttons">
+                                <a href="security-test.html" class="btn btn-primary">Fazer Teste de Segurança</a>
+                                <a href="store.html" class="btn btn-secondary">Ir para a Loja</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Epic Games. Todos os direitos reservados. Este é um site educativo sobre segurança.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

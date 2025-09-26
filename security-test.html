@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Segurança - Epic Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="logo.png" alt="Epic Games" class="logo">
+                <span class="brand-text">Epic Games</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="2fa.html">Ativar 2FA</a></li>
+                <li><a href="security-test.html" class="active">Teste de Segurança</a></li>
+                <li><a href="store.html">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="test-header">
+                <h1>🎯 Teste de Segurança</h1>
+                <p>Navegue pela página e tente comprar uma skin sem cair em golpes! Cuidado com anúncios falsos, captchas suspeitos e outras armadilhas.</p>
+                <div class="test-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">0% Completo</span>
+                </div>
+            </div>
+
+            <!-- Fake Ad 1 - Popup style -->
+            <div class="fake-ad popup-ad" onclick="showHackedMessage()">
+                <div class="ad-content">
+                    <span class="ad-close">×</span>
+                    <h3>🎉 PARABÉNS! VOCÊ GANHOU!</h3>
+                    <p>Clique aqui para receber 1000 V-Bucks GRÁTIS!</p>
+                    <button class="btn-scam">RESGATAR AGORA</button>
+                </div>
+            </div>
+
+            <!-- Fake Captcha -->
+            <div class="fake-captcha" onclick="showHackedMessage()">
+                <h3>Verificação de Segurança</h3>
+                <p>Complete o captcha para continuar:</p>
+                <div class="captcha-box">
+                    <div class="captcha-image">🤖</div>
+                    <p>Eu não sou um robô</p>
+                    <input type="checkbox">
+                </div>
+            </div>
+
+            <!-- Legitimate content area -->
+            <div class="legitimate-content">
+                <h2>Loja de Skins Oficial</h2>
+                <div class="skins-grid">
+                    <div class="skin-card legitimate" onclick="proceedToStore()">
+                        <div class="skin-image">🎮</div>
+                        <h3>Skin Épica Oficial</h3>
+                        <p class="price">1,200 V-Bucks</p>
+                        <button class="btn btn-primary">Comprar Agora</button>
+                    </div>
+
+                    <!-- Fake skin with suspicious offer -->
+                    <div class="skin-card fake" onclick="showHackedMessage()">
+                        <div class="skin-image">💎</div>
+                        <h3>Skin ULTRA RARA</h3>
+                        <p class="price fake-price">
+                            <span class="original-price">2,500 V-Bucks</span>
+                            <span class="discount-price">GRÁTIS!</span>
+                        </p>
+                        <button class="btn btn-danger blink">PEGAR AGORA!</button>
+                    </div>
+
+                    <div class="skin-card legitimate" onclick="proceedToStore()">
+                        <div class="skin-image">⚔️</div>
+                        <h3>Skin de Guerreiro</h3>
+                        <p class="price">800 V-Bucks</p>
+                        <button class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fake urgent notification -->
+            <div class="fake-notification" onclick="showHackedMessage()">
+                <div class="notification-content">
+                    <span class="notification-icon">⚠️</span>
+                    <div class="notification-text">
+                        <strong>ATENÇÃO!</strong> Sua conta será suspensa em 24h!
+                        <a href="#" class="notification-link">Clique aqui para verificar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fake download button -->
+            <div class="fake-download" onclick="showHackedMessage()">
+                <h3>📱 Baixe nosso app exclusivo!</h3>
+                <p>Ganhe V-Bucks extras baixando nosso aplicativo oficial</p>
+                <button class="btn btn-success">BAIXAR APK</button>
+            </div>
+
+            <!-- Fake survey -->
+            <div class="fake-survey" onclick="showHackedMessage()">
+                <div class="survey-content">
+                    <h3>🎁 Pesquisa Rápida - Ganhe Prêmios!</h3>
+                    <p>Responda 3 perguntas e ganhe skins grátis!</p>
+                    <div class="survey-question">
+                        <p>1. Qual é o seu jogo favorito?</p>
+                        <input type="text" placeholder="Digite aqui...">
+                    </div>
+                    <button class="btn btn-warning">ENVIAR RESPOSTA</button>
+                </div>
+            </div>
+
+            <!-- Fake login form -->
+            <div class="fake-login" onclick="showHackedMessage()">
+                <div class="login-form">
+                    <h3>🔐 Sessão Expirada</h3>
+                    <p>Faça login novamente para continuar:</p>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Senha">
+                    <button class="btn btn-primary">ENTRAR</button>
+                </div>
+            </div>
+
+            <!-- Success message area -->
+            <div class="success-area hidden" id="success-area">
+                <div class="success-card">
+                    <div class="success-icon">🎉</div>
+                    <h2>Parabéns! Você passou no teste!</h2>
+                    <p>Você evitou todas as armadilhas e escolheu uma compra legítima. Agora você está pronto para navegar com segurança!</p>
+                    <div class="test-results">
+                        <h3>O que você evitou:</h3>
+                        <ul>
+                            <li>❌ Anúncios pop-up falsos</li>
+                            <li>❌ Captchas suspeitos</li>
+                            <li>❌ Ofertas "grátis" impossíveis</li>
+                            <li>❌ Notificações de urgência falsas</li>
+                            <li>❌ Downloads de aplicativos não oficiais</li>
+                            <li>❌ Formulários de login falsos</li>
+                        </ul>
+                    </div>
+                    <a href="store.html" class="btn btn-primary btn-large">Ir para Loja Oficial</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating fake ads -->
+    <div class="floating-ad floating-ad-1" onclick="showHackedMessage()">
+        <div class="ad-content">
+            <span class="ad-close">×</span>
+            <p>💰 Ganhe dinheiro em casa!</p>
+            <small>Clique aqui</small>
+        </div>
+    </div>
+
+    <div class="floating-ad floating-ad-2" onclick="showHackedMessage()">
+        <div class="ad-content">
+            <span class="ad-close">×</span>
+            <p>🎯 Hack para V-Bucks infinitos!</p>
+            <small>Download grátis</small>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Epic Games. Todos os direitos reservados. Este é um site educativo sobre segurança.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
